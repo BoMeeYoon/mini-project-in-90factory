@@ -1,0 +1,98 @@
+.header { display: flex; align-items: flex-end; height: 15vh; padding: 1rem;}
+
+.header .logo {font-size: 2rem;}
+.header .logo p {font-size: 1.2rem;}
+
+.header .header-nav {display: flex; margin-left: auto;  width: 10rem; justify-content: space-between; font-size:1rem; font-weight: bold; color: gold;}
+
+.header a { color: #555; display: block; font-size: 1rem;}
+.header a:hover { color: crimson;}
+
+.sections {display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh; padding: 1rem; background: oldlace;}
+
+
+.footer { text-align: center; font-size: 0.6rem; padding: 1rem;}
+
+
+.sectionsbodies { margin-bottom: 2rem;}
+.sections {display: flex; flex-direction: column; text-align: center; padding:0;}
+
+/* 3가지 메뉴 */
+.sections input.nav-item {width: 15rem; height: 5rem; margin:1rem; border-radius: 1rem; background: gold; color:#555; font-size: 1.5rem; font-weight: bold;}
+.sections input.nav-item:hover {background: crimson; color:white}
+
+/* 회원관리 상세메뉴 */
+#body1menu .listsmember > li > a {width: 17rem; font-size: 1.2rem; font-weight: bold; padding: 1rem; border: 1px solid oldlace; background: #555; color: oldlace;}
+#body1menu .listsmember > li > a:hover {background: gold; color: crimson}
+
+/* 주차관리 상세메뉴 */
+#body1parking {display: flex; flex-direction: column;}
+#body1parking input {width: 10rem; height: 3rem; margin:0.5rem; border-radius: 1rem; background: #555; color:white; font-size: 1.5rem; font-weight: bold;}
+#body1parking input:hover {background: gold; color:crimson;}
+
+/* 회원관리 뒤로가기 버튼 */
+input#back {margin: 1rem auto; padding: 0.5rem; width: 5rem; border-radius: 0.5rem; font-size: 1rem; font-weight: bold; background: gold; color:#555;}
+input#back:hover {color:crimson;}
+
+/* 회원등록, 수정화면 */
+#body1member, #body1membercheck, #body2setmember, #body2deletemember { height: 100%;}
+
+#body1member > h1:nth-child(1), #body2setmember > h1:nth-child(1) { font-size: 1.5rem; margin: 1rem; }
+#body2deletemember > h1:nth-child(1) { font-size: 1.3rem; margin: 1rem;}
+#body1member #addmember, #body2setmember #editmemberinfo, #body2deletemember #delete_memberinfo { display: flex; flex-direction: column; font-size: 1.1rem; font-weight: bold; align-content: left; align-items: flex-start; }
+#body1member #addmember > label, #body2setmember #editmemberinfo > label, #body2deletemember #delete_memberinfo > label {margin: 0.2rem;}
+#body1member #addmember > label::before, #body2setmember #editmemberinfo > label::before, #body2deletemember #delete_memberinfo > label::before {content: "☛";}
+#body1member #addmember > input, #body2setmember #editmemberinfo > input, #body2deletemember #delete_memberinfo > input {width: 12rem; margin: 0 2rem 0 auto; padding: 0.2rem; text-align: center; font-size: 1.1rem; font-weight: bold; border-radius: 0.5rem; color:#555; background: rgba(220, 20, 60, 0.349);}
+
+
+/* 회원등록 등록,취소 버튼 */
+
+
+#body1member #addmember > div,
+#body1membercheck > div:nth-child(3),
+#readResult > div:nth-child(3),
+#body2readmember > form:nth-child(2) > div:nth-child(3), #editmemberinfo > div, #editResult > div:nth-child(3),
+#delete_memberinfo > div {margin:auto;}
+
+#body1member #addmember > div > input,
+#body1membercheck > div:nth-child(3) > input:nth-child(1),
+#readResult #reRead, #read, #body2readmember > form:nth-child(2) > div:nth-child(3) > input:nth-child(2), input#body1menu_back, input#body2readmember_back, #editmemberinfo > div > input, #editResult > div:nth-child(3) > input, #delete_memberinfo > div > input {margin: 1rem; padding: 0.5rem; width: 5rem; border-radius: 0.5rem; font-size: 1rem; font-weight: bold; background: gold; color:#555;}
+
+#body1member #addmember > div > input:hover,
+#body1membercheck > div:nth-child(3) > input:nth-child(1):hover,
+#readResult #reRead:hover, #read:hover, #body2readmember > form:nth-child(2) > div:nth-child(3) > input:nth-child(2):hover, input#body1menu_back:hover, input#body2readmember_back:hover, #editmemberinfo > div > input:hover, #editResult > div:nth-child(3) > input:hover, #delete_memberinfo > div > input:hover {color:crimson;}
+
+/* 회원등록 확인 테이블 */
+#body1membercheck > h1:nth-child(1) {margin: 1rem auto 2rem auto; font-size:1.5rem;}
+
+#body1membercheck #checklist {width:100%; text-align: left; line-height: 2rem; font-size: 1.3rem; font-weight: bold;}
+#checklist > tbody:nth-child(1) > tr:nth-child(n) > td:nth-child(1) { color:crimson; }
+
+/* 회원조회 화면 */
+
+#body2readmember {display: flex; flex-direction: column;}
+#body2readmember > h1.title {font-size: 1.4rem; margin-bottom: 2rem;}
+#body2readmember > form:nth-child(2) > input:nth-child(2) {width: 10rem; border-radius: 0.5rem; background: #555; color:white; font-size: 1.3rem; font-weight: bold; padding:1rem; text-align: center;}
+#body2readmember > form:nth-child(2) > label:nth-child(1) {font-size: 2rem; font-weight: bold;}
+
+
+
+/* 회원조회 확인 테이블 */
+#readResult #readresult_title, #editResult #editresult_title {margin:1rem; font-size:1.5rem; font-weight: bold;}
+#readResult #readresult_list, #editResult #editresult_list {width:100%; text-align: left; line-height: 1.3rem;}
+li.readList:nth-child(n) {width:100%; margin-top:1rem; font-size: 1.2rem;}
+li.readList:nth-child(n) > input:nth-child(n) {width:3rem; height: 1.5rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: bold; background: crimson; color: white}
+li.readList:nth-child(n) > input:nth-child(n):hover {background: #555;}
+
+/* 회원수정 화면
+
+#body2setmember .title {margin:1rem; font-size:1.5rem; font-weight: bold;}
+ */
+
+
+
+
+
+ 
+
+

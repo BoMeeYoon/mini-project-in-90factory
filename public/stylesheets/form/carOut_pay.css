@@ -1,0 +1,53 @@
+.sections form {display: flex; flex-direction: column; height: 100%; width: 100%;}
+.sections .body1 div#hide, div#payTypes {display: flex; justify-content: center;}
+
+.sections .body1 #paymentscreen > #title2 {margin: 1.3rem auto 1rem;}
+.body1 #paymentscreen #creditcards {display: flex; justify-content: space-evenly;}
+
+.sections .body1 #byetext {margin: 1.3rem auto 1rem;}
+
+input#no, input#yes, input#credit, input#cash, input#carout, input#couponbtn, input#moneybtn, input#paybtn {margin: 0.5em auto 0; width: 100px; height: 30px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;}
+input#no:hover, input#yes:hover, input#credit:hover, input#cash:hover, input#carout:hover, input#couponbtn:hover, input#moneybtn:hover, input#paybtn:hover {background: crimson; color: white;}
+input#carout {margin-top: 1em;}
+input#couponbtn {margin: 0 1rem 0 0; height: auto;}
+
+
+.bodies .body2 table {width: 100%; font-size: 1.2rem; font-weight: bold; line-height: 2rem;}
+
+#payInfoList > tbody:nth-child(1) > tr:nth-child(n) > td:nth-child(1) {text-align: left; color:crimson; width: 6rem;}
+
+
+/* 재조회 버튼 가운데 정렬 */
+.body2 > div:nth-child(2) {display:flex; text-align: center;}
+
+.sections .bodies .body2 #index, #creditbtn, #back {margin: 0.5em auto; width: 100px; height: 30px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;}
+.sections .bodies .body2 #index:hover, #creditbtn:hover, #back:hover { background: crimson; color: white;}
+
+.sections .body1 #payscreen #show { display: flex; margin-top: 1rem; justify-content: space-evenly;}
+.sections .body1 #payscreen #show #coupon {padding: 1rem; border-radius: 0.5rem; color: crimson;}
+
+@media (min-width: 600px){
+
+    .sections form {flex-direction: row; height: 67vh; align-items: center;}
+    
+    .sections .bodies { margin-top: 1rem; }
+    .body2 {display: flex; flex-direction: column; }
+
+    input#no, input#yes, input#credit, input#cash, input#carout,input#couponbtn, input#moneybtn, input#paybtn, input#creditbtn { margin: 2rem; width: 15rem; height: 4rem; font-size: 1.5rem; }
+      /* input#back {
+        margin: 1rem;
+      } */
+
+    .sections .body1 #paymentscreen > #title2, #byetext { margin: 1rem 0 1rem 0; font-size: 2rem; }
+
+    .sections .bodies .body2 #index, #paybtn, #creditbtn, #back {margin: 1rem 1rem 0rem 0rem; }
+
+    .bodies .body2 table { margin-left: 0.5rem; }
+
+    .sections .body1 #payscreen #show { align-items: center; }
+    .sections .body1 #payscreen #show #coupon { height: 3rem; font-size: 1.5rem; padding: 0.5rem;}
+
+    .sections .body1 #creditcards > div:nth-child(1) {font-size: 1.5rem; margin:auto 0;}
+    .sections .body1 #creditcards > div:nth-child(1) > input:nth-child(2n+1) {margin-right: 1rem; font-size: 1.5rem;}
+
+}

@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.sections {
+    display: flex;
+    flex-direction: column;
+}
+.body1 {
+    background-color: oldlace;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body2 {
+    background-color: oldlace;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+.body1T {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 1em;
+}
+input[type=button]{
+    height: 60px;  
+    justify-content: center;
+    align-items: center;  
+}
+
+@media (min-width:600px) {
+    .sections {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    }
+    .body1{
+        width: 50%;
+        height: 67vh;
+    }   
+    .body2{
+        width: 50%;
+        height: 67vh;
+    }   
+    .body1T {
+        margin-top: 6rem;
+    }
+}

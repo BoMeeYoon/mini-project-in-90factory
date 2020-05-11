@@ -1,0 +1,84 @@
+
+
+/* 버튼 */
+.sections .body1 #search { border: 0.2rem solid #555; width: 15rem; padding: 0.5rem;
+background-color: whitesmoke;}
+.sections .bodies #tableList1 { margin: auto; }
+.button { width: 80px; height: 55px; background-color:gold; color: #555; border: 0.05rem solid #555; font-size: 2rem; font-weight: border; }
+.button:hover { background-color: crimson; color: white; animation: 0.2s; }
+
+table { border: 0.2rem solid #555; }
+
+
+/* 재조회 버튼 가운데 정렬 */
+div {text-align: center;}
+#index {margin: 2rem auto 0; width: 100px; height: 30px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;}
+#index:hover { background: crimson; color: white;}
+
+/* 조회된 차량번호  */
+.tableList2_items > a:nth-child(1) {display: block; text-align: left; padding: 0; font-size: 1.2rem; font-weight: bold; color:#555; line-height: 2rem;}
+.tableList2_items > a:nth-child(1):hover {color:crimson}
+
+
+@media (min-width: 600px){
+    /* 버튼 */
+    .body1T { margin-top: 6rem; }
+    .button { width: 6rem; height: 4rem; }
+    table { margin-top: 6rem; }
+
+    .sections form {display: flex; width:100%;}
+    .sections .body1 {width: 50%; margin-top:2rem;}
+    .sections .bodies {width: 50%;}
+
+
+    .sections .body2 form { margin-top: 2rem;}
+    .sections .body2 th {font-size: 2rem;}
+    .sections .body2 td {font-size: 1.5rem;}
+    .sections .body2:last-child {margin-top: 4rem; text-align: center; display: flex; flex-direction: column; align-items: center;}
+
+    #index {width: 200px; height: 60px; font-size: 2rem; }
+
+    div {text-align: left;}
+
+}
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+
+/* body1 title */
+
+
+/* body2 input */
+/* .sections .body2 {width: 100%;}
+
+.sections .body2 form {display: flex; flex-direction: column; align-items: center;}
+.sections .body2 input[type=text] {text-align: center; font-size: 16px; padding: 15px; margin: 15px;}
+.sections .body2 input[type=submit] {width: 200px; height: 40px; background: gold; color: #555; font-size: 16px; font-weight: bold;}
+.sections .body2 input[type=submit]:hover {background: crimson; color: white;}
+
+
+.sections .body2 #note {margin: 1rem 0; text-align: center; font-size: 1rem;}
+.sections .body2 table {width: 100%; text-align: center;}
+.sections .body2 th {color:crimson;}
+.sections .body2 td {height: 40px;} */
+
+/* ok 버튼 가운데 정렬
+.sections .body2 div:last-child {text-align: center;}
+.sections .body2 #ok {margin: 2rem auto 0; width: 100px; height: 30px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;}
+.sections .body2 #ok:hover { background: crimson; color: white;} */
+
+/* .sections .body2 #ok {width: 200px; height: 70px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1.5rem; font-weight: bold; box-shadow: 0 10px 10px 0 goldenrod;}
+.sections .body2 #ok:active { transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); box-shadow: 0 2px 0 0;}
+.sections .body2 #ok:hover { background: crimson; color: white;} */
+
+/* footer */
+

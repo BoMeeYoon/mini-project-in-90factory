@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/form/form_default.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/admin.css" rel="stylesheet" type="text/css">
+    <title>관리자페이지</title>
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="logo">BOM's <p>Parking Lot</p></h1>
+            <ul class="header-nav">
+                <li class="header-nav-btn"><a href="/">HOME</a></li>
+                <li class="header-nav-btn"><a href="/">ADMIN</a></li>
+                <li class="header-nav-btn"><a href="#a">HELP</a></li>
+            </ul>
+        </header>
+        <section class="sections">
+        <div class="members_menu">
+        <nav class="nav">
+            <input type="button" class="nav-item" id= member value="회원관리">
+            <input type="button" class="nav-item" id= parking value="주차관리">
+            <input type="button" class="nav-item" id= notice value="안내사항">
+        </nav>
+
+        <section class="sectionsbodies">
+
+            <section id="body1menu">
+                <ul class="listsmember">
+                    <li id="add" class="members" name="add"><a>회원등록</a></li>
+                    <li id="get" class="members" name="get"><a>회원조회</a></li>
+                    <li id="set" class="members" name="set"><a>회원수정</a></li>
+                    <li id="delete" class="members" name="delete"><a>회원삭제</a></li>
+                </ul>
+            </section>
+        </div>
+
+            <section id="body1parking">
+               <input type="button" name="in" value="입차" onclick="location.href='/carIn'">
+               <input type="button" name="out" value="출차" onclick="location.href='/carOut'">
+            </section>
+            
+            <!-- 등록화면 -->
+            <section id="body1member">
+                
+                <h1 class="title">회원 정보를 입력하세요</h1>
+                
+                <form id="addmember">
+                    <label for="carNumber">차량번호 : </label>
+                        <input type="text" name="carNumber" placeholder = "12가1234" required>
+                    <label for="name">회 원 명 : </label>
+                        <input type="text" name="name" placeholder = "코린이" required>
+                    <label for="mobile">연 락 처 : </label>
+                        <input type="tel" name="mobile" placeholder = "010-0000-0000" required>
+                    <label for="start">계 약 일 : </label>
+                        <input type="date" class="startDate" name="startDate" required>
+                    <label for="expire">만 료 일 : </label>
+                        <input type="date" class="expireDate" name="expireDate" required>
+
+                    <div>
+                        <input type="submit" id="submit" value="등록">
+                        <input type="reset" value="취소">
+                        <input id="body1menu_back" name="body1menu_back" type="button"  value="뒤로">
+                    </div>
+                </form>
+
+                <div id="addresult"></div>
+
+            </section>
+
+            <!-- 등록완료 확인 화면 -->
+
+            <section id="body1membercheck">
+                
+                <h1 class="title">회원등록이 완료되었습니다.</h1>
+
+                    <table id="checklist">
+
+                        <tr><td>차량번호 : </td><td id="carNumber"></td></tr>
+                        <tr><td>회 원 명 : </td><td id="name"></td></tr>
+                        <tr><td>연 락 처 : </td><td id="mobile"></td></tr>
+                        <tr><td>계 약 일 : </td><td id="startDate"></td></tr>
+                        <tr><td>만 료 일 : </td><td id="expireDate"></td></tr>
+
+                    </table>
+
+                    <div>
+                        <input type="button" id="check" value="확인" onclick="location.href='/'">
+                    </div>
+
+            </section>
+
+            <!-- 조회화면 -->
+
+            <section id="body2readmember">
+                    
+                <h1 class="title">차량번호 뒷 4자리를 입력하세요</h1>
+                
+                <form id="readmember">
+                    <label for="searchcarNumber">차량번호 : </label>
+                        <input type="search" name="search" id="search">
+
+                    <div>
+                        <input type="submit" id="read" value="조회">
+                        <input type="reset" value="취소">
+                        <input type="reset" id="body2readmember_back" name="body2readmember_back" value="뒤로">
+                        
+                    </div>
+                </form>
+
+            </section>
+
+            <!-- 조회확인화면 -->
+
+            <section id="readResult">
+                <div id="readresult_title"></div>
+                <div id="readresult_list"></div>
+                
+                <div>
+                    <input type="reset" id="reRead" value="재조회">
+                </div>
+            </section>
+
+            <!-- 수정화면 -->
+
+            <section id="body2setmember">
+                
+                <h1 class="title">내용을 입력하세요</h1>
+
+                <form id="editmemberinfo">
+                
+
+                    <label for="carNumber">차량번호 : </label>
+                        <input id="info_carNumber" type="text" name="carNumber" readonly>
+                    <label for="name">회 원 명 : </label>
+                        <input id="info_name" type="text" name="name">
+                    <label for="mobile">연 락 처 : </label>
+                        <input id="info_mobile" type="tel" name="mobile">
+                    <label for="start">계 약 일 : </label>
+                        <input id="info_startDate" type="date" class="startDate" name="startDate">
+                    <label for="expire">만 료 일 : </label>
+                        <input id="info_expireDate" type="date" class="expireDate" name="expireDate">
+               
+                    
+                    
+                    <div>
+                        <input id="edit" type="submit" value="수정">
+                        <input id="_edit" type="reset" value="취소">
+                    </div>
+                </form>
+
+            </section>
+
+            <!-- 정보수정 확인화면 -->
+
+            <section id="editResult">
+                <div id="editresult_title"></div>
+                <div id="editresult_list"></div>
+                
+                <div>
+                    <input type="button" id="edit_check_btn" value="수정완료" onclick="location.href='/'">
+                </div>
+            </section>
+
+            <!-- 삭제화면 -->
+            <section id="body2deletemember">
+
+                <h1 class="delete_title"></h1>
+
+                <form id="delete_memberinfo">
+
+                    <label for="carNumber">차량번호 : </label>
+                        <input id="_info_carNumber" type="text" name="carNumber" readonly>
+                    <label for="name">회 원 명 : </label>
+                        <input id="_info_name" type="text" name="name" readonly>
+                    <label for="mobile" >연 락 처 : </label>
+                        <input id="_info_mobile" type="tel" name="mobile" readonly>
+                    <label for="start">계 약 일 : </label>
+                        <input id="_info_startDate" type="date" class="startDate" name="startDate" readonly>
+                    <label for="expire">만 료 일 : </label>
+                        <input id="_info_expireDate" type="date" class="expireDate" name="expireDate" readonly>
+                    
+                    <div>
+                        <input id="delete_btn"" type="button" value="삭제">
+                        <input id="_delete_btn" type="button" value="취소">
+                    </div>
+                </form>
+
+                
+            </section>
+
+            <div>
+                <input id="back" name="back" type="button"  value="뒤로" onclick="location.href='/'">
+            </div>
+
+        </section>
+
+        </section>
+
+        <footer class="footer">
+            <h3>Have a Nice Day</h3>
+            <h3>ⓒ Bom's Parking Lot</h3>
+        </footer>
+    </div>
+    <input type="button" id="">
+
+    
+</body>
+</html>
+
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous" type="text/javascript"></script>
+
+<script>
+
+//1. 화면 비활성화 기본 값
+
+    $("#body1menu").hide();
+    $("#body1parking").hide();
+    $("#body1member").hide();
+    $("#body2readmember").hide();
+    $("#body2setmember").hide();
+    $("#body2deletemember").hide();
+    $("#back").hide();
+    $("#reRead").hide();
+    $("#body1membercheck").hide();
+    $("#edit_check_btn").hide();
+
+
+//2. admin 첫번째 화면
+// 회원관리버튼
+    $("#member").on('click', function () {
+        $(".nav").hide();
+        $("#body1menu").show();
+        $("#back").show();
+
+    })
+// 주차관리버튼
+    $("#parking").on('click', function() {
+        $("#member").hide();
+        $("#notice").hide();
+        $("#parking").hide();
+        $("#body1parking").show();
+        $("#back").show();
+    })
+
+
+//3. 회원관리 상세
+
+// 회원등록버튼
+    $("#add").on('click', function () {
+        $("#body1member").show();
+        $("#body1menu").hide();
+        $("#member").hide();
+        $("#back").hide();  
+    })
+
+    // 회원등록뒤로버튼 
+    $("#body1menu_back").on('click', function () {
+        $("#body1menu").show();
+        $(".nav").hide();
+        $("#back").show();
+        $("#body1member").hide();
+    })
+
+// 회원조회버튼
+    $("#get").on('click', function () {
+        $("#body2readmember").show();
+        $("#body1menu").hide();
+        $("#member").hide();
+        $("#back").hide(); 
+    })
+
+    //회원조회뒤로버튼
+    $("#body2readmember_back").on('click', function () {
+        $("#body1menu").show();
+        $(".nav").hide();
+        $("#back").show();
+        $("#body2readmember").hide();
+    })
+
+    //회원재조회버튼
+    $("#reRead").on('click', function() {
+        $("#readResult").hide();
+        $("#body2readmember").show();
+    })
+
+
+//회원정보수정화면에서 수정버튼
+//동적으로 생성된 태그의 이벤트 처리
+
+$(document).on('click', '.set', function () {
+    
+    $("#body2setmember").show();
+    $("#readResult").hide();
+    let info = updateMemberList[$(this).attr('name')];
+
+    $("#info_carNumber").val(info.carNumber);
+    $("#info_name").val(info.name);
+    $("#info_mobile").val(info.mobile);
+    $("#info_startDate").val(info.startDate);
+    $("#info_expireDate").val(info.expireDate);
+    
+})
+
+//회원관리 - 회원수정버튼
+
+$("#set").on('click', function () {
+        $("#body2readmember").show();
+        $("#body1menu").hide();
+        $("#member").hide();
+        $("#back").hide(); 
+    })
+
+//회원관리 - 회원삭제버튼
+
+$("#delete").on('click', function () {
+    $("#body2readmember").show();
+    $("#body1menu").hide();
+    $("#member").hide();
+    $("#back").hide(); 
+})
+
+//회원삭제화면에서 취소버튼
+$("#_delete_btn").on('click', function () {
+    $("#readResult").show();
+    $("#body2deletemember").hide();
+})
+
+
+
+//회원정보수정화면에서 취소버튼
+
+$("#_edit").on('click', function () {
+    $("#readResult").show();
+    $("#body2setmember").hide();
+})
+
+//회원정보수정화면에서 삭제버튼
+//동적으로 생성된 태그의 이벤트 처리
+
+$(document).on('click', '.delete', function () {
+
+    $("#body2deletemember").show();
+    $("#readResult").hide();
+    let info = updateMemberList[$(this).attr('name')];
+
+    $("#_info_carNumber").val(info.carNumber);
+    $("#_info_name").val(info.name);
+    $("#_info_mobile").val(info.mobile);
+    $("#_info_startDate").val(info.startDate);
+    $("#_info_expireDate").val(info.expireDate);
+    $(".delete_title").text(`${info.name}님의 정보를 삭제하시겠습니까?`)
+
+})
+
+
+
+//4. 비동기 데이터 요청 
+
+// 회원등록 요청 + 확인화면
+
+$(document).ready(function () {
+    $("#submit").click(function(e) {
+        
+        event.preventDefault();
+
+        let addmember = $('#addmember').serialize();
+        
+        $.ajax({
+            type : "POST",
+            url : "/addmember",
+            data : addmember,
+            success : function (check) {
+                console.log(check);
+                $("#body1member").hide();
+                $("#body1membercheck").show();
+
+                for (let checklist in check) {
+                    let carNumber = check[checklist].carNumber;
+                    let name = check[checklist].name;
+                    let mobile = check[checklist].mobile;
+                    let startDate = check[checklist].startDate;
+                    let expireDate = check[checklist].expireDate;
+
+                    $("#carNumber").text(carNumber);
+                    $("#name").text(name);
+                    $("#mobile").text(mobile);
+                    $("#startDate").text(startDate);
+                    $("#expireDate").text(expireDate);
+                }
+
+            },
+            error: function (err) {
+                console.log("error!");
+            }
+        })
+    })
+})
+
+// 회원정보조회 + undateMemberList (조회된 고객리스트)
+
+let updateMemberList = [];
+
+$(document).ready(function () {
+    $("#read").click(function(e) {
+
+        event.preventDefault();
+
+        let carNum = $('#search').serialize();
+        $.ajax({
+            type : "POST",
+            url : "/readmember",
+            data : carNum,
+            success : function (lists) {
+                console.log(lists[0].carNumber);
+                $('#readresult_title').text(`조회가 완료되었습니다`);
+                $("#readResult").show();
+                
+                if(typeof lists === "object") {
+                    let html = "";
+                    let count = 0;
+                    for(let list in lists) {
+                        html+=`<li class="readList">차량번호 : ${lists[list].carNumber} <input type="button" class="set" name=${count} value="수정">
+                        <input type="button" class="delete" name=${count} value="삭제"><br/> 회 원 명 : ${lists[list].name}<br/> 연 락 처 : ${lists[list].mobile}<br/> `;
+                        
+                       updateMemberList.push(lists[list]);
+                        ++count;
+                        console.log(count);
+                    }
+                
+                $('#readresult_list').show();
+                $('#readresult_list').html(html);
+                }
+                
+                else {
+                    $('#readresult_list').hide();
+                    $("#readresult_title").text(lists);
+                }
+                
+                $("#body2readmember").hide();
+                $("#reRead").show();
+            }
+        })
+    })
+})
+
+
+// 회원정보 수정 시 변경내용 업데이트 요청
+
+$(document).ready(function () {
+    
+    $("#edit").click(function(e) {
+        
+        event.preventDefault();
+        
+        let editmemberinfo = $("#editmemberinfo").serialize();
+
+        $.ajax({
+            type : "POST",
+            url : "/editmember",
+            data : editmemberinfo,
+            success : function (edit_check_list) {
+                
+                console.log(edit_check_list);
+                
+                $("#body2setmember").hide();
+                $("#editResult").show();
+                $("#edit_check_btn").show();
+                $("#editresult_title").text(`수정이 완료되었습니다`);
+                
+                let html ="";
+
+                for (let edit_check in edit_check_list) {
+                    
+
+                    html+=`<li class="readList">차량번호 : ${edit_check_list[edit_check].carNumber}<br/> 회 원 명 : ${edit_check_list[edit_check].name}<br/> 연 락 처 : ${edit_check_list[edit_check].mobile}<br/> 계 약 일 : ${edit_check_list[edit_check].startDate}<br/> 만 료 일 : ${edit_check_list[edit_check].expireDate}</li>`;
+                
+                }
+                $("#editresult_list").html(html);
+
+            },
+            error: function (err) {
+                console.log("error!");
+            }
+        })
+    })
+})
+
+// 회원정보 삭제 요청
+
+$(document).ready(function () {
+
+    $("#delete_btn").click(function(e) {
+        
+        event.preventDefault();
+
+        if(confirm(`삭제 후에는 정보를 복구할 수 없습니다.`)) {
+            
+            let deletemember = $('#delete_memberinfo').serialize();
+
+            $.ajax({
+                type : "POST",
+                url : "/deletemember",
+                data : deletemember,
+                success : function (delete_check) {
+                    console.log(delete_check);
+                    alert(`정보가 삭제되었습니다.`);
+                    document.location.href="/";
+                },
+            error: function (err) {
+                console.log("error!")
+            } 
+            })
+        // return true;
+        }
+        
+        else {return false;}
+
+    })
+})
+
+
+</script>
+
+
+<!-- 계 약 일 : ${lists[list].startDate}<br/> 만 료 일 : ${lists[list].expireDate}</li> -->

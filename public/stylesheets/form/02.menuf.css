@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+.menu {
+    display: flex;
+}
+.menu-item {
+    background: gold;
+    display: block;
+    width: 25%;
+    padding: 1em;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    transition: 1s;
+}
+.menu-item:hover {
+    width: 35%;
+    background: crimson;
+    color: white;
+}
+@media (min-width: 600px) {
+    .menu-item {
+    padding: 1em;
+    font-size: 1.2rem;
+}
+}

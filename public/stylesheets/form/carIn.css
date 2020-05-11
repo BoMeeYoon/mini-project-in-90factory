@@ -1,0 +1,36 @@
+
+/* body2 input */
+.sections .body2 {width: 100%;}
+
+.sections .body2 form {display: flex; flex-direction: column; align-items: center;}
+.sections .body2 input[type=text] {text-align: center; font-size: 16px; padding: 15px; margin: 15px;}
+.sections .body2 input[type=submit] {width: 200px; height: 40px; background: gold; color: #555; font-size: 16px; font-weight: bold;}
+.sections .body2 input[type=submit]:hover {background: crimson; color: white;}
+
+
+.sections .body2 #note {margin: 1rem 0; text-align: center; font-size: 1rem;}
+.sections .body2 table {width: 100%; text-align: center;}
+.sections .body2 th {color:crimson;}
+.sections .body2 td {height: 40px;}
+
+/* ok 버튼 가운데 정렬 */
+.sections .body2 div:last-child {text-align: center;}
+.sections .body2 #ok {margin: 2rem auto 0; width: 100px; height: 30px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;}
+.sections .body2 #ok:hover { background: crimson; color: white;}
+
+/* .sections .body2 #ok {width: 200px; height: 70px; background: gold; color: #555; border-radius: 0.5rem; font-size: 1.5rem; font-weight: bold; box-shadow: 0 10px 10px 0 goldenrod;}
+.sections .body2 #ok:active { transform: translate(0px, 5px); -webkit-transform: translate(0px, 5px); box-shadow: 0 2px 0 0;}
+.sections .body2 #ok:hover { background: crimson; color: white;} */
+
+
+@media (min-width: 600px){
+
+    .sections .body2 form { margin-top: 2rem;}
+    .sections .body2 input[type=text] {font-size: 20px; padding: 20px; margin: 20px;}
+    .sections .body2 input[type=submit] {width: 250px; font-size: 20px;}
+    .sections .body2 input[type=submit]:hover {background: crimson; color: white;}
+
+    .sections .body2 th {font-size: 1.5rem;}
+    .sections .body2 td {font-size: 1.2rem;}
+    .sections .body2:last-child {margin-top: 4rem;}
+}

@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2rem;
+    background-color: crimson;
+    text-align: center;
+    color: whitesmoke;
+}
+@media (min-width: 600px) {
+    .footer {
+        height: 2.5rem;
+    }
+}

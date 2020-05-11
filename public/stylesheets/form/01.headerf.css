@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+.logo h2 {
+    font-size: 1rem;
+}
+.header-btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+}
+.btns {
+    width: 6em;
+    height: 2em;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    background: gold;
+    text-align: center;
+    margin-right: 2%;
+}
+.btns:hover {
+    background: crimson;
+    color: white;
+}
+@media (min-width: 600px) {
+    .btns {
+    font-size: 1.2rem;
+    margin-right: 5%;
+    }
+    .logo h1 {
+        font-size: 2rem;
+    }
+    .log h2 {
+        font-size: 2rem;
+    }
+}

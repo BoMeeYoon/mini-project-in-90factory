@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/form/form_default.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/form_header.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/carOut_pay.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class ="page">
+        <header class="header">
+            <h1 class="logo">BOM's <p>Parking Lot</p></h1>
+            <ul class="header-nav">
+                <li class="header-nav-btn"><a href="/">HOME</a></li>
+                <li class="header-nav-btn"><a href="/">ADMIN</a></li>
+                <li class="header-nav-btn"><a href="#a">HELP</a></li>
+            </ul>
+        </header>
+
+        <!-- menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li class="menu-item"><a href="#a">사전정산</a></li>
+                <li class="menu-item"><a href="#a">차량조회</a></li>
+                <li class="menu-item"><a href="#a">요금계산</a></li>
+                <li class="menu-item"><a href="#a">처리완료</a></li>
+            </ul>
+        </nav>
+
+        <div class="sections">
+            <form>
+                <section class="body1">
+                <!-- onclick=show() -->
+                <!-- <div id="section1"> -->
+                    <div id="payscreen">
+                        <h1 id="title">요금을 확인 하세요</h1>
+                        <h2 id="subtitle">쿠폰을 입력하시겠습니까?</h2>
+                        <div id="hide">
+                            <input id="no" name="no" type="button" value="쿠폰없음">
+                            <input id="yes" name="yes" type="button" value="쿠폰입력">
+                        </div>
+                        <input id="paybtn" name="yes" type="button" value="결제">
+                        <div id="show">
+                            <input id="coupon" name="coupon" type="text" placeholder="쿠폰번호를 입력하세요">
+                            <input id="couponbtn" name="couponbtn" type="button" value="입력">
+                        </div>
+                    </div>
+
+                    <div id="paymentscreen">  
+                        <h1 id="title2">결제방법을 선택하세요</h1>
+                        <h2 id="subtitle2"></h2>
+                        <h3 id="byetext"></h3>
+                        <input id="carout" name="carout" type="button" value="출차">  
+                        <div id="payTypes">
+                            <input id="credit" name="credit" type="button" value="카드결제">
+                            <input id="cash" name="moneybtn" type="button" value="현금결제">
+                        </div>
+                        <div id="creditcards">
+                            <div>
+                            <input type="radio" name="creditCard" value="samsung">삼성카드<br>
+                            <input type="radio" name="creditCard" value="sinhan">신한카드<br>
+                            <input type="radio" name="creditCard" value="woori">우리카드<br>
+                            </div>
+                            <div>
+                            <input id="creditbtn" name="moneybtn" type="button" value="결제">
+                            </div>
+                        </div>
+                        <div id="money">
+                            <!-- <input id="moneytext" name="moneytext" type="text" placeholder="현금을 투입하세요"> -->
+                            <input id="moneybtn" name="moneybtn" type="button" value="현금투입"">
+                        </div>
+                    </div>
+
+                <!-- </div>     -->
+                </section>
+
+                <section class="bodies">
+                    <section class="body2">
+                <!-- <div id="section2"> -->
+                    <table id="payInfoList">
+
+                        <tr> <td>차량번호</td> <td name="carNumber" id="carNumber"><%= carNumber %></td></tr>
+
+                        <tr> <td>입차시간</td> <td name="entryTime "id="entryTime"><%= entryTime %></td></tr>
+                        
+                        <tr> <td>주차시간</td> <td name="time" id="time"></td></tr>
+                        
+                        <tr> <td>요&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금</td> <td name="fee" id="fee"></td> </tr>
+                        
+                        <tr> <td>할인금액</td> <td name="discount" id="discount"></td> </tr>
+                        
+                        <tr> <td>결제금액</td> <td name="payment" id="payment"></td> </tr>
+                    
+                    </table>
+                <!-- </div> -->
+                    <div>
+                    <input id="index" name="index" type="button" value="처음" onclick="location.href='/carOut'">
+                    <input id="back" name="back" type="button" value="이전단계">
+                    </div>
+                    </section>
+                </section>
+            </form>
+        </div>
+        
+        <footer class="footer">
+            <h3>Have a Nice Day</h3>
+            <h3>ⓒ Bom's Parking Lot</h3>
+        </footer>
+    </div>
+</body>
+</html>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous" type="text/javascript"></script>
+
+<script>
+    // document.getElementById("show").style.display="none";
+    $("#show").hide();
+    $("#paybtn").hide();
+    $("#back").hide();
+    $("#paymentscreen").hide();
+    $("#carout").hide();
+
+    $("#yes").on('click', function() {
+        $("#show").show();
+        $("#hide").hide();
+        $("#back").show();
+        let subtitle = document.getElementById("subtitle");
+        subtitle.innerHTML = `쿠폰 번호를 입력하세요`;
+        $("#back").on('click', function () {
+            $("#hide").show();
+            $("#paybtn").hide();
+            $("#back").hide();
+            $("#show").hide();
+            $("#title").text(`요금을 확인 하세요`);
+            $("#subtitle").text(`쿠폰을 입력하시겠습니까?`);
+        
+   })     
+    })
+    
+    $("#no").on('click', function() {
+        $("#hide").hide();
+        $("#paybtn").show();
+        $("#back").show();
+        $("#title").text(`결제금액을 확인하세요`);
+        $("#subtitle").text(`할인이 적용되지 않았습니다`);
+        $("#back").on('click', function () {
+            $("#hide").show();
+            $("#paybtn").hide();
+            $("#back").hide();
+            $("#show").hide();
+            $("#title").text(`요금을 확인 하세요`);
+            $("#subtitle").text(`쿠폰을 입력하시겠습니까?`);
+        
+   })     
+    })
+
+
+   $("#paybtn").on('click', function() {
+        
+        $("#payscreen").hide();
+        $("#paymentscreen").show();
+        $("#creditcards").hide();
+        $("#money").hide();
+        $("#back").hide();
+       
+        $("#credit").on('click', function() {
+            $("#creditcards").show();
+            $("#payTypes").hide();
+            $("#back").show();
+        })
+
+        $("#cash").on('click', function() {
+            $("#money").show();
+            $("#payTypes").hide();
+            $("#back").show();
+        })
+
+        $("#back").on('click', function() {
+            $("#payTypes").show();
+            $("#creditcards").hide();
+            $("#money").hide();
+            $("#back").hide();
+        })
+
+   })
+
+    let time, fee, payment = "";
+    
+    time = document.getElementById("time");
+    time.innerHTML = Math.floor(`<%= time %>`/60)+ ' 시간 ' + (`<%= time %>`%60) + ' 분';
+
+    fee = document.getElementById("fee");
+    fee.innerHTML = Number(`<%= fee %>`).toLocaleString()+ ' 원';
+
+    $("#couponbtn").on('click', function() {
+        
+        let coupon, discount, dif= "";
+
+        discount = document.getElementById("discount");
+        coupon = Number(document.getElementById("coupon").value);
+
+        if(coupon === 0 || coupon > 2) {alert(`쿠폰번호를 확인하세요`)}
+        else {
+        $("#back").on('click', function() {
+            $("#back").show();
+            $("#subtitle").text(`쿠폰 번호를 입력하세요`)
+            $("#show").show();
+            $("#hide").hide();
+            })
+        
+        $("#paybtn").show();
+        $("#show").hide();
+        $("#title").text(`결제금액을 확인하세요`)
+
+        dif = getdiscount(coupon, price(timer(`<%= time %>`)));
+        payment = dif;
+        
+        $("#payment").text(`${dif.toLocaleString()} 원`);
+        discount.innerHTML = (dif - `<%= fee %>`).toLocaleString()+ ' 원';
+
+            if(coupon===1){$("#subtitle").text(`20%할인 쿠폰 적용`);}
+            else if(coupon===2){$("#subtitle").text(`50%할인 쿠폰 적용`);} 
+            else {$("#subtitle").text(`70%할인 쿠폰 적용`);}
+        }
+    })
+
+    $("#no").on('click', function() {
+    
+        let discount, dif = "";
+        // payment = document.getElementById("payment");
+        discount = document.getElementById("discount");
+        
+        dif = getdiscount(0, price(timer(`<%= time %>`)));
+        
+        payment = dif;
+        
+        $("#payment").text(`${payment.toLocaleString()} 원`)
+        discount.innerHTML = (dif - `<%= fee %>`).toLocaleString()+ ' 원';
+    })
+
+
+    $("input[name=moneybtn]").on('click', function() {
+        $("#creditcards").hide();  
+        let money = Number(prompt(`금액을 입력하세요`));
+        payment = Number(payment);
+        
+        let toPay2 = toPay(money, payment);
+        
+        
+        if(toPay2[0] > 0) {
+            console.log(toPay2[0]+'22222');
+            $("#title2").text(`정산이 완료되었습니다.`);  
+            $("#subtitle2").text(`잔액은 ${toPay2[1].toLocaleString()}원입니다.`);
+            $("#moneybtn").hide();
+            $("#payInfoList").hide();
+            $("#back").hide();  
+            $("#carout").show();
+        }
+        
+        else if (toPay2[0] <0) {
+            console.log(toPay2[0]+"33333");
+            $("#title2").text(`결제가 진행 되지 않았습니다.`);
+            $("#subtitle2").text(`${toPay2[1].toLocaleString()}원이 부족합니다.`);
+            $("#back").show();
+            $("#back").on('click', function() {
+                $("#paymentscreen").show();
+                $("#title2").text(`결제방법을 선택하세요`);
+                $("#subtitle2").text(``);
+                
+        })
+        }
+    })
+
+    $(document).ready(function() {
+        $("#carout").click(function(e) {
+            event.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "/carOut/pay",
+                success: function(byetext) {
+                    console.log("success!")
+                    $("#byetext").text(byetext);
+                    $("#title2").hide();
+                    $("#subtitle2").hide();
+                    $("#carout").hide();
+                },
+                error: function(err) {
+                    console.log("error!")
+                } 
+            });
+        });
+    });
+
+    function timer(time) {
+        if(30<time<=(8*60)) {
+            return time = Math.round(time/10)*10;
+        } else {
+            return time;
+        }
+    }
+    function price(time) {
+        let price;
+        if (time<=30) { return price = 1000; }
+        else if (30<time<=(8*60)) { return price = 1000+((time-30)/10*500);}
+        else if ((8*60)<time<(24*60)) { return price = 15000; }
+        else { return price = 15000+((time-(24*60))/(10*500));}
+    }
+    function getdiscount(coupon, price) {
+        switch(coupon) {
+            case 0: return price;
+            case 1: return price*(1-0.2);
+            case 2: return price*(1-0.5);
+            case 3: return price*(1-0.7);
+        }
+    }
+    function toPay(money, fee) {
+        let change = money - fee;
+        if(change>=0) {
+            return [1, change];
+        } else if (change <0) {
+            change = Math.abs(change);
+            return [-1, change];
+        }
+    }
+</script>

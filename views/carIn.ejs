@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/form/form_default.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/form_header.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/carIn.css" rel="stylesheet" type="text/css">
+    <script src="/javascripts/carIn.js"></script>
+
+    <title>입차</title>
+</head>
+<body>
+    <div class="page">
+        <!-- header -->
+        <header class="header">
+            <h1 class="logo">BOM's <p>Parking Lot</p></h1>
+            <ul class="header-nav">
+                <li class="header-nav-btn"><a href="/">HOME</a></li>
+                <li class="header-nav-btn"><a href="/">ADMIN</a></li>
+                <li class="header-nav-btn"><a href="#a">HELP</a></li>
+            </ul>
+        </header>
+
+            <!-- menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li class="menu-item"><a href="#a">사전정산</a></li>
+                <li class="menu-item"><a href="#a">차량조회</a></li>
+                <li class="menu-item"><a href="#a">요금계산</a></li>
+                <li class="menu-item"><a href="#a">처리완료</a></li>
+            </ul>
+        </nav>
+
+        <div class="sections">
+            <section class="body1">
+                <div class="startnote">
+                <h3 id="title">차량번호를 입력하세요</h3>
+                </div>
+            </section>
+            <section class="bodies">
+                <section class="body2">
+                    <form id="form">
+                    <input id="adduser" type="text" name="adduser" placeholder="예) 20늘3333">
+                    <input id="adduserbtn" type="submit" name="adduserbtn" value="입차">
+                    </form>
+                </section>
+
+                <section class="body2">
+                    <div id="check">
+                    <h2 id="note"></h2>
+                    <h3 id="usertype"></h1>
+                        <table id="notetable">
+                            <tr id="show">
+                                <th>차량번호</th><th>입차시간</th>
+                            </tr>
+                            <tr>
+                                <td id="userNumber"></td><td id="userTime"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                    <!-- <input id="index" name="index" type="button" value="처음" onclick="location.href='/'"> -->
+                    <input id="ok" name="index" type="button" value="확인" onclick="location.href='/'">
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <h3>Have a Nice Day</h3>
+            <h3>ⓒ Bom's Parking Lot</h3>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous" type="text/javascript"></script>
+

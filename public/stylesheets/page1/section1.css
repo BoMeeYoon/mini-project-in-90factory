@@ -1,0 +1,37 @@
+#display {
+    border: 0.2em solid #555;
+    width: 75%;
+    padding: 1em;
+    background-color: whitesmoke;
+    margin-bottom: 2em;
+}
+
+.button {
+    width: 80px;
+    height: 55px;
+    background-color:gold;
+    color: #555;
+    border: 0.05rem solid #555;
+    font-size: 2rem;
+    font-weight: border;
+}
+.button:hover {
+    background-color: crimson;
+    color: white;
+}
+
+table {
+    border: 0.2rem solid #555;    
+}
+@media (min-width: 600px) {
+    .body1T {
+        margin-top: 6rem;
+    }
+    .button {
+    width: 6rem;
+    height: 4rem;
+    }
+    table {
+        margin-top: 6rem;
+    }
+}

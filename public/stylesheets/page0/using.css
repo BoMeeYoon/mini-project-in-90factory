@@ -1,0 +1,50 @@
+.startnote {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.startnote h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: auto;
+}
+#usingbtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#using {
+    border-radius: 5px;
+    padding: 20px 80px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 20px;
+    color: #555;
+    background-color:gold;
+    box-shadow: 0px 10px 10px 0px goldenrod;
+}
+#using:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 2px 0px 0px;
+}
+#using:hover {
+    background-color: crimson;
+    color: white
+}
+@media (min-width: 600px) {
+
+    .startnote h3 {
+        font-size: 2rem;
+    }
+    .startnote {
+       margin-top: 10rem;
+    }
+    #usingbtn {
+        margin-top: 9rem;
+        margin-right: auto;
+    } 
+       
+}

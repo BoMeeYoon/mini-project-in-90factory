@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/form/form_default.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/form_header.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/form/carOut.css" rel="stylesheet" type="text/css">
+    <script src="/javascripts/carOut.js"></script>
+    
+    <title>출차</title>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="logo">BOM's <p>Parking Lot</p></h1>
+            <ul class="header-nav">
+                <li class="header-nav-btn"><a href="/">HOME</a></li>
+                <li class="header-nav-btn"><a href="/">ADMIN</a></li>
+                <li class="header-nav-btn"><a href="#a">HELP</a></li>
+            </ul>
+        </header>
+
+        <!-- menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li class="menu-item"><a href="#a">사전정산</a></li>
+                <li class="menu-item"><a href="#a">차량조회</a></li>
+                <li class="menu-item"><a href="#a">요금계산</a></li>
+                <li class="menu-item"><a href="#a">처리완료</a></li>
+            </ul>
+        </nav>
+    
+        <div class="sections">
+        
+            <form>
+            <!-- top / left -->
+                <section class = "body1">
+                <!-- 태그정리하기 -->
+                    
+                        <h1 id="title">차량번호 뒷 4자리를<br/> 입력하세요</h1>
+                        <input id="search" name="search" type="search">
+                        <h2 id="subtitle"></h2>
+                    
+                
+                </section>
+
+                <section class="bodies">
+                    <!-- body2 태그 없어졌음 ㅠ 넣어야함 -->
+                    <section class="body2">
+                    <table id="tableList1">
+                    <tr>
+                        <td><input class="button" type="button" value="1" onclick="add('1')"></td>
+                        <td><input class="button" type="button" value="2" onclick="add('2')"></td>
+                        <td><input class="button" type="button" value="3" onclick="add('3')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" value="4" onclick="add('4')"></td>
+                        <td><input class="button" type="button" value="5" onclick="add('5')"></td>
+                        <td><input class="button" type="button" value="6" onclick="add('6')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" value="7" onclick="add('7')"></td>
+                        <td><input class="button" type="button" value="8" onclick="add('8')"></td>
+                        <td><input class="button" type="button" value="9" onclick="add('9')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" id="ok" type="submit" value="확인"></td>
+                        <td><input class="button" type="button" value="0" onclick="add('0')"></td>
+                        <td><input class="button" id="no" type="reset" value="취소"></td>
+                    </tr>
+                    </table>
+                        
+                    <ul id="tableList2"></ul>
+                    
+            
+        <!-- 여기도 body2 에 들어감 -->
+                    <div>
+                    <input id="index" name="index" type="button" value="재조회" onclick="location.href='/carOut'">
+            <!-- <input id="index" name="index" type="button" value="처음" onclick="location.href='/'"> -->
+                    </div>
+                    </section>
+                </section>
+            </form>    
+        </div>
+
+        <footer class="footer">
+            <h3>Have a Nice Day</h3>
+            <h3>ⓒ Bom's Parking Lot</h3>
+        </footer>
+    </div>
+</body>
+</html>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous" type="text/javascript"></script>
