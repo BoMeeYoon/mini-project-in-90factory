@@ -18,4 +18,4 @@
   <br>
   
  ## 정리 및 결과물
- [구공팩토리 3기 미니프로젝트.pdf](구공팩토리 3기 미니프로젝트.pdf)
+https://github.com/BoMeeYoon/mini-project-in-90factory/blob/master/%EA%B5%AC%EA%B3%B5%ED%8C%A9%ED%86%A0%EB%A6%AC%203%EA%B8%B0%20%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.pdf
